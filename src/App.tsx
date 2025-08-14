@@ -304,6 +304,21 @@ export const App: React.FC = () => {
           </section>
         )}
 
+        {!loading && error && (
+          <div
+            data-cy="ErrorNotification"
+            className="notification is-danger is-light has-text-weight-normal"
+          >
+            <button
+              data-cy="HideErrorButton"
+              type="button"
+              className="delete"
+              onClick={() => setError('')}
+            />
+            {error}
+          </div>
+        )}
+
         {!loading && todos.length > 0 && (
           <footer className="todoapp__footer" data-cy="Footer">
             <span className="todo-count" data-cy="TodosCounter">
