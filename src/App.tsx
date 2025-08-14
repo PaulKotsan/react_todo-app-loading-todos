@@ -45,7 +45,7 @@ export const App: React.FC = () => {
       return;
     }
 
-    const timer = setTimeout(() => setError(''), 3000);
+    const timer = setTimeout(() => setError(''), 0);
 
     return () => clearTimeout(timer);
   }, [error]);
@@ -291,7 +291,10 @@ export const App: React.FC = () => {
                       data-cy="TodoLoader"
                       className="modal overlay is-active"
                     >
-                      <div className="modal-background has-background-white-ter" />
+                      <div
+                        className="
+                        modal-background has-background-white-ter"
+                      />
                       <div className="loader" />
                     </div>
                   )}
